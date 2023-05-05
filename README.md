@@ -1,4 +1,4 @@
-# Flask Dashboard for overview
+# Flask Dashboard
 This is a web-based data monitoring flask application. In this project, I built a simple web-based dashboard to visualize real-time process data originating from one of our postgres SQL database.
 
 # The dashboard should allow the user to plot each of these four series (Temperature, pH, Distilled Oxygen, and Pressure) over time.
