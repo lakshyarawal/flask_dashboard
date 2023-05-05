@@ -1,1 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Your Timeseries Plot</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 0;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+      }
+
+      form label {
+        margin-right: 10px;
+      }
+
+      form input[type="time"] {
+        width: 100px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 7px 12px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 10px;
+      }
+
+      button:hover {
+        background-color: #3e8e41;
+      }
+
+      select {
+        font-size: 16px;
+        padding: 8px;
+        border: none;
+        border-radius: 4px;
+        background-color: #f1f1f1;
+      }
+
+      img {
+        display: block;
+        margin: 10px auto;
+        max-width: 120%;
+        height: auto;
+      }
+
+      #options-container {
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="align-self: center">Flask Sample Overview Dashboard</h1>
+
+    <div id="options-container">
+      <div id="dropdown-container">
+        <label for="myDropdown" style="font-size: large"
+          >Select an option for the timeseries:</label
+        >
+        <select id="myDropdown" onchange="changeImage()">
+          <option value="{{tempPlot}}" selected>Temperature</option>
+          <option value="{{phPlot}}">PH</option>
+          <option value="{{doPlot}}">Distilled Oxygen</option>
+          <option value="{{pressPlot}}">Pressure</option>
+        </select>
+      </div>
+      <div>
+        <button id="refresh-button">Refresh Data</button>
+
+        <a download="data.csv" id="download" style="display: inline">
+          <button>Download CSV</button>
+        </a>
+      </div>
+    </div>
+    <br />
+    <form>
+      <label for="start_time">Start Time:</label>
+      <input type="time" id="start_time" value="00:00" />
+
+      <label for="end_time">End Time:</label>
+      <input type="time" id="end_time" value="23:59" />
+
+      <button type="button" id="update" onclick="onTimeChange()">
+        Update Graph
+      </button>
+    </form>
+    <br />
+
+    <div>
+      <img
+        id="my-image"
+        src="{{ url_for('static', filename='images/'+tempPlot+'.png') }}"
+      />
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      console.log("The page was loaded");
+      var image = document.getElementById("my-image");
+      var current_table = "{{tempPlot}}";
+      var link = document.getElementById("download");
+      downloadCSVHref();
+
+      const refreshButton = document.getElementById("refresh-button");
+
+      refreshButton.addEventListener("click", function () {
+        // Send an AJAX request to the Flask endpoint that returns the updated data
+        fetch("/refresh-data")
+          .then((response) => response.text())
+          .then((data) => {
+            image.src =
+              "{{ url_for('static', filename='images/') }}" +
+              current_table +
+              ".png";
+            console.log(data);
+          });
+      });
+
+      function downloadCSVHref() {
+        var href = "/download-csv?current_table=" + current_table;
+        link.setAttribute("href", href);
+      }
+
+      function changeImage() {
+        console.log("change function called");
+        var select = document.getElementById("myDropdown");
+
+        current_table = select.value;
+        console.log(current_table);
+
+        image.src =
+          "{{ url_for('static', filename='images/') }}" +
+          current_table +
+          ".png";
+
+        downloadCSVHref();
+      }
+
+      function onTimeChange() {
+        console.log("time change function called");
+        var start_filter = document.getElementById("start_time");
+        var end_filter = document.getElementById("end_time");
+
+        console.log("Sending Data: ");
+        console.log(start_filter.value);
+        console.log(end_filter.value);
+        console.log(current_table);
+
+        const params = new URLSearchParams();
+        params.append("start_time", start_filter.value);
+        params.append("end_time", end_filter.value);
+        params.append("current_table", current_table);
+
+        var argsString =
+          "start_time=" +
+          start_filter.value +
+          "&end_time=" +
+          end_filter.value +
+          "&current_table=" +
+          current_table;
+
+        fetch("/filter?" + argsString)
+          .then((Response) => Response.json())
+          .then((data) => {
+            console.log(data);
+            console.log("Updating Image from filter", current_table);
+            var table_name = data.TABLE_NAME;
+            image.src =
+              "{{ url_for('static', filename='images/') }}" +
+              table_name +
+              ".png";
+          })
+          .catch((error) => console.log(error));
+      }
+    </script>
+  </body>
+</html>
 
