@@ -1,6 +1,6 @@
 # Flask Dashboard
 
-## Technoligies Used: ![image](https://user-images.githubusercontent.com/20071320/236403386-48627733-a5f0-4fbd-a026-6179065cb581.png)
+## Technoligies Used: https://user-images.githubusercontent.com/25181517/117207330-263ba280-adf4-11eb-9b97-0ac5b40bc3be.png
 
 ## This is a web-based data monitoring flask application. In this project, I built a simple web-based dashboard to visualize real-time process data originating from one of our postgres SQL database.
 
