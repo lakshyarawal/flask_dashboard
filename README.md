@@ -5,6 +5,9 @@ The dashboard should allow the user to plot each of these four series (Temperatu
 
 <img width="1433" alt="Screenshot 2023-05-05 at 3 32 37 AM" src="https://user-images.githubusercontent.com/20071320/236401321-17ff60f6-1102-49a2-8098-1bad7e301b1c.png">
 
+This allows the user to select the time window. Which is then communicated through app routes to the application and updates the dashboard. 
+It also allows the user to refresh the data without refreshing the page, or auto-refresh the page for the user using a simple button.
+
 <img width="1440" alt="Screenshot 2023-05-05 at 3 33 36 AM" src="https://user-images.githubusercontent.com/20071320/236401341-9f8d8e35-31db-41bc-9316-97097055c79d.png">
 
 <img width="1440" alt="Screenshot 2023-05-05 at 3 34 30 AM" src="https://user-images.githubusercontent.com/20071320/236401361-7ba4cf7b-4e35-4c0d-bf5a-a1da78a397b3.png">
