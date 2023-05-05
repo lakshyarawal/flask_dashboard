@@ -1,8 +1,13 @@
 # Flask Dashboard for overview
 
-<img width="1440" alt="Screenshot 2023-05-05 at 3 26 23 AM" src="https://user-images.githubusercontent.com/20071320/236399812-500d164c-1ba8-41ac-9376-c179044bd8cd.png">
-<img width="1440" alt="Screenshot 2023-05-05 at 3 26 33 AM" src="https://user-images.githubusercontent.com/20071320/236399824-f7b6c251-1a43-429c-8752-dbbf8153cf9e.png">
-<img width="1440" alt="Screenshot 2023-05-05 at 3 26 42 AM" src="https://user-images.githubusercontent.com/20071320/236399839-24a10b1a-7ce8-44bd-9fda-512a38147f8b.png">
-<img width="1440" alt="Screenshot 2023-05-05 at 3 26 51 AM" src="https://user-images.githubusercontent.com/20071320/236399857-63ce84d5-76f2-4775-8d6a-785d00e04293.png">
-<img width="1440" alt="Screenshot 2023-05-05 at 3 27 04 AM" src="https://user-images.githubusercontent.com/20071320/236399875-b058f4cc-3985-47dd-b8f2-2462140a8d49.png">
-<img width="1440" alt="Screenshot 2023-05-05 at 3 27 11 AM" src="https://user-images.githubusercontent.com/20071320/236399890-3c65c451-35c5-4004-9a41-0d8b82dcc2bb.png">
+<img width="1433" alt="Screenshot 2023-05-05 at 3 32 37 AM" src="https://user-images.githubusercontent.com/20071320/236401321-17ff60f6-1102-49a2-8098-1bad7e301b1c.png">
+
+<img width="1440" alt="Screenshot 2023-05-05 at 3 33 36 AM" src="https://user-images.githubusercontent.com/20071320/236401341-9f8d8e35-31db-41bc-9316-97097055c79d.png">
+
+<img width="1440" alt="Screenshot 2023-05-05 at 3 34 30 AM" src="https://user-images.githubusercontent.com/20071320/236401361-7ba4cf7b-4e35-4c0d-bf5a-a1da78a397b3.png">
+
+<img width="1440" alt="Screenshot 2023-05-05 at 3 34 59 AM" src="https://user-images.githubusercontent.com/20071320/236401378-a2b4f75b-4e06-464b-806d-7730b23bb035.png">
+
+<img width="1439" alt="Screenshot 2023-05-05 at 3 35 25 AM" src="https://user-images.githubusercontent.com/20071320/236401396-53148edd-8d6d-4772-8863-cf7ec095a290.png">
+
+<img width="1437" alt="Screenshot 2023-05-05 at 3 35 51 AM" src="https://user-images.githubusercontent.com/20071320/236401403-fea8911d-9d39-4f5f-b5e5-db8be66432f1.png">
